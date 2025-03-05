@@ -112,5 +112,5 @@ jobs:
   #         text: ":rocket: *코드가 배포되었습니다!* - `${{ github.repository }}`\n🔗 *커밋:* <https://github.com/${{ github.repository }}/commit/${{ github.sha }}|커밋 보기>"
   #       env:
   #         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        if: always() # 항상 실행
+#          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#        if: always() # 항상 실행
