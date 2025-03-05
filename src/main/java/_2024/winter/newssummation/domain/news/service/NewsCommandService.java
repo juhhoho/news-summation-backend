@@ -35,6 +35,9 @@ public class NewsCommandService {
             }
 
             String articleBody = crawlNewsBody(item.getLink());
+            if(articleBody == null){
+                continue;
+            }
 
             News news = News.builder()
                     .title(item.getTitle())
@@ -66,11 +69,11 @@ public class NewsCommandService {
                 return articleBodyElement.text();
             } else {
                 log.warn("본문을 찾을 수 없습니다. URL: " + articleUrl);
-                return "본문을 찾을 수 없습니다.";
+                return null;
             }
         } catch (IOException e) {
             log.error("네이버 뉴스 본문 크롤링 중 오류 발생. URL: " + articleUrl, e);
-            return "본문을 크롤링하는 데 오류가 발생했습니다.";
+            return null;
         }
     }
 
