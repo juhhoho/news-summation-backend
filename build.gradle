@@ -73,6 +73,20 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.14.3' // Jsoup 의존성
     implementation 'org.springframework.boot:spring-boot-starter-reactor-netty' // 비동기 HTTP 클라이언트용
 
+    // security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // jwt
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+    // smtp
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    // redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.session:spring-session-data-redis'
 }
 
 tasks.named('test') {

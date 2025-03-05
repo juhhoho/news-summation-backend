@@ -3,6 +3,7 @@ package _2024.winter.newssummation.common.apiPayload.success;
 import _2024.winter.newssummation.common.apiPayload.BaseApiResponse;
 import _2024.winter.newssummation.domain.news.dto.response.GetNewsDetailResponse;
 import _2024.winter.newssummation.domain.news.dto.response.GetPagingNewsResponse;
+import _2024.winter.newssummation.domain.user.dto.response.*;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
@@ -29,6 +30,36 @@ public class SuccessApiResponse <T> extends BaseApiResponse {
     public static SuccessApiResponse<GetNewsDetailResponse> onSuccessGetNewsDetail(GetNewsDetailResponse response){
         return new SuccessApiResponse<>(true, HttpStatus.OK.toString()
                 , "뉴스 조회 성공", response);
+    }
+
+    // [USER - REGISTER]
+    public static SuccessApiResponse<CheckUsernameDuplicateResponse> onSuccessCheckUsernameDuplicate(CheckUsernameDuplicateResponse response){
+        return new SuccessApiResponse<>(true, HttpStatus.OK.toString()
+                , "사용자이름 중복확인 성공", response);
+    }
+    public static SuccessApiResponse<SendAuthEmailResponse> onSuccessSendAuthEmail(SendAuthEmailResponse response){
+        return new SuccessApiResponse<>(true, HttpStatus.OK.toString()
+                , "이메일 전송 성공", response);
+    }
+    public static SuccessApiResponse<CheckAuthEmailResponse> onSuccessCheckAuthEmail(CheckAuthEmailResponse response){
+        return new SuccessApiResponse<>(true, HttpStatus.OK.toString()
+                , "이메일 인증 성공", response);
+    }
+    public static SuccessApiResponse<SignupResponse> onSuccessSignup(SignupResponse response){
+        return new SuccessApiResponse<>(true, HttpStatus.CREATED.toString()
+                , "회원가입 성공", response);
+    }
+
+    // [USER - LOGIN]
+    public static SuccessApiResponse<LoginResponse> onSuccessLogin(LoginResponse response){
+        return new SuccessApiResponse<>(true, HttpStatus.OK.toString()
+                , "로그인 성공", response);
+    }
+
+    // [USER - REISSUE]
+    public static SuccessApiResponse<ReissueResponse> onSuccessReissue(ReissueResponse response){
+        return new SuccessApiResponse<>(true, HttpStatus.CREATED.toString()
+                , "토큰 재발급 성공", response);
     }
 
 }
